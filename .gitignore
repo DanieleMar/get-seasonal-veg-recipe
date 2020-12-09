@@ -2,7 +2,8 @@
 INFO
 TODO.MD 
 auth
-
+.env 
+constant.js
 # dependencies
 /node_modules
 /.pnp
