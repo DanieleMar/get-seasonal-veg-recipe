@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { fetchRecipe } from "../utils/fetch/api";
+import { fetchRecipe } from "../utils/fetch/get";
 import SingleRecipe from "../singleRecipe/index";
 
 export default function ListOfRecipes() {
