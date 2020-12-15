@@ -9,5 +9,3 @@ Utilizza le seguenti API:
 * Prende da API le ricette vegetariane (le ricette sono in inglese)
 * Prende solo le ricette con verdure di stagione in italia
 * Mostra 10 ricette per pagina
-
-Richiede con POST gli ingredienti di ogni ricetta (da implementare)
