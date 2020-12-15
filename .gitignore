@@ -3,7 +3,7 @@ INFO
 TODO.MD 
 auth
 .env 
-constant.js
+
 # dependencies
 /node_modules
 /.pnp
@@ -25,3 +25,4 @@ constant.js
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+src/constant.js
