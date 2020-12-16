@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+.header{
+  text-align: center;
+  background-color: green;
+  padding: 50px 0px
+}
+.vegetable{
+  padding: 50px 100px
+}
+
+img{
+  height: 300px;
+  width: 300px;
+
+  /* avoid strecth */
+  object-fit: cover; 
+}
