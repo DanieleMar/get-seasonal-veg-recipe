@@ -1,5 +1,7 @@
 # Get Seasonal Vegetarian Recipes
 
+(Work in Progress)
+
 Utilizza le seguenti API: 
 * https://developer.edamam.com/edamam-docs-recipe-api
 * https://developer.edamam.com/edamam-docs-nutrition-api
