@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { getRecipe } from "./utils/fetch/get";
 import SingleRecipe from "./components/singleRecipe";
+import "./App.css";
 
 export default function App() {
   const [recipes, setRecipes] = useState([]);
@@ -30,6 +31,9 @@ export default function App() {
     "Pumpkin",
   ];
 
+
+
+  //Get recipes
   const getData = async (value) => {
     const data = await getRecipe(value);
     if (data !== undefined) {
@@ -38,8 +42,7 @@ export default function App() {
     }
   };
   const getSetRecipes = (hits, count) => {
-    //creare un array fatto di oggetti recipe che contengono nome e url della ricetta
-    //deve essere lungo, la metà degli elementi di hits
+
     const recipeArray = hits.map((value, index) => {
       const { recipe } = value;
       const { label, url, image } = recipe;
@@ -48,15 +51,50 @@ export default function App() {
 
     setRecipes(recipeArray);
   };
+  //IMPORT image dinamically
+  function importAll(r) {
+    let images = {};
+    r.keys().map((item, index) => {
+      images[item.replace("./", "")] = r(item);
+    });
+    return images;
+  }
+  const images = importAll(
+    require.context("../public/img/", false, /\.(png|jpe?g|svg)$/)
+  );
+  //change extension of img to render correctly
+  const renderImage = (images, value) => {
+    const listExt = ["jpg", "jpeg", "png"];
+    for (let index = 0; index < listExt.length; index++) {
+      const imgExpression = images[`${value.toLowerCase()}.${listExt[index]}`];
+      if (imgExpression !== undefined)
+        return <img src={imgExpression.default} alt={value}></img>;
+    }
+  };
 
   let meseCorrente = "Dicembre";
   return (
     <div>
-
-      Ecco le verdure di stagione a {meseCorrente} in Italia <br></br>
+      <div className="header">
+        <h1>Ecco le verdure di stagione a {meseCorrente} in Italia </h1>
+      </div>
+      <br></br>
       {listOfVegetables.map((value, index) => {
         return (
-          <span key={index} onClick={() => getData(value)}>{`${value}, `}</span>
+          <>
+
+            {/* render image programmatically and avoid extension crash */}
+
+            {renderImage(images, value)}
+
+            <span
+              className="vegetable"
+              key={index}
+              onClick={() => getData(value)}
+            >
+              {`${value}, `}{" "}
+            </span>
+          </>
         );
       })}
 
@@ -70,4 +108,3 @@ export default function App() {
     </div>
   );
 }
-
