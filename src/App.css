@@ -52,6 +52,6 @@ img{
   height: 300px;
   width: 300px;
 
-  /* avoid strecth */
+  /* avoid stretch */
   object-fit: cover; 
 }
