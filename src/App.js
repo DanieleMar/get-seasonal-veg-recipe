@@ -31,8 +31,6 @@ export default function App() {
     "Pumpkin",
   ];
 
-
-
   //Get recipes
   const getData = async (value) => {
     const data = await getRecipe(value);
@@ -42,7 +40,6 @@ export default function App() {
     }
   };
   const getSetRecipes = (hits, count) => {
-
     const recipeArray = hits.map((value, index) => {
       const { recipe } = value;
       const { label, url, image } = recipe;
@@ -76,28 +73,13 @@ export default function App() {
   return (
     <div>
       <div className="header">
+      <a name="top"></a>
         <h1>Ecco le verdure di stagione a {meseCorrente} in Italia </h1>
       </div>
       <br></br>
-      {listOfVegetables.map((value, index) => {
-        return (
-          <>
-
-            {/* render image programmatically and avoid extension crash */}
-
-            {renderImage(images, value)}
-
-            <span
-              className="vegetable"
-              key={index}
-              onClick={() => getData(value)}
-            >
-              {`${value}, `}{" "}
-            </span>
-          </>
-        );
-      })}
-
+      <h4>Clicca su una verdura per visualizzare alcune delle ricette</h4>
+      <br></br>
+{recipes.length > 0 && <a href="#vegetables">Torna alla lista delle verdure</a>}
       {recipes.length > 0 &&
         recipes.map((recipe, index) => {
           const { label, image, url } = recipe;
@@ -105,6 +87,29 @@ export default function App() {
             <SingleRecipe key={index} name={label} url={url} imgUrl={image} />
           );
         })}
+      <br></br>
+      {listOfVegetables.map((value, index) => {
+        return (
+          <>
+            <a name="vegetables"></a>
+            {/* render image programmatically and avoid extension crash */}
+           
+            <span  onClick={() => getData(value)}>
+            <a href="#top">
+              {renderImage(images, value)}
+
+              <span
+                className="vegetable"
+                key={index}
+                onClick={() => getData(value)}
+              >
+                {`${value}, `}{" "}
+              </span>
+              </a>
+            </span>
+          </>
+        );
+      })}
     </div>
   );
 }
