@@ -18,10 +18,10 @@ export const getRecipe = async (vegetable) => {
         })
         const data = await response.json()
     
-    console.log('data', data)
+
         return data
       } catch(err) {
-        console.log('error',err); // TypeError: failed to fetch
+        console.log('error', err); // TypeError: failed to fetch
       }
 
 }
