@@ -3,7 +3,7 @@ INFO
 TODO.MD 
 auth
 .env 
-
+/ignore
 # dependencies
 /node_modules
 /.pnp
