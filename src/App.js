@@ -77,10 +77,10 @@ export default function App() {
         <h1>Ecco le verdure di stagione a {meseCorrente} in Italia </h1>
       </div>
       <br></br>
-      <h4>Clicca su una verdura per visualizzare alcune delle ricette</h4>
+      <h4 >Clicca su una verdura per visualizzare alcune delle ricette</h4>
       <br></br>
       {recipes.length > 0 && (
-        <a href="#vegetables">Torna alla lista delle verdure</a>
+        <a className='middle' href="#vegetables">Torna alla lista delle verdure</a>
       )}
       {recipes.length > 0 &&
         recipes.map((recipe, index) => {
