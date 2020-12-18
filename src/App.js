@@ -77,43 +77,48 @@ export default function App() {
         <h1>Ecco le verdure di stagione a {meseCorrente} in Italia </h1>
       </div>
       <br></br>
-      <h4 >Clicca su una verdura per visualizzare alcune delle ricette</h4>
+      <h4>Clicca su una verdura per visualizzare alcune delle ricette</h4>
       <br></br>
+
       {recipes.length > 0 && (
-        <a className='middle' href="#vegetables">Torna alla lista delle verdure</a>
+        <a className="middle" href="#vegetables">
+          Torna alla lista delle verdure
+        </a>
       )}
-      {recipes.length > 0 &&
-        recipes.map((recipe, index) => {
-          const { label, image, url } = recipe;
-          return (
-            <SingleRecipe key={index} name={label} url={url} imgUrl={image} />
-          );
-        })}
+      <div className="recipesList">
+        {recipes.length > 0 &&
+          recipes.map((recipe, index) => {
+            const { label, image, url } = recipe;
+            return (
+              <SingleRecipe className="singleRecipe" key={index} name={label} url={url} imgUrl={image} />
+            );
+          })}
+      </div>
       <br></br>
       <div className="all-vegetables">
-      {listOfVegetables.map((value, index) => {
-        return (
-          <div className='vegetable-box'>
-            <a name="vegetables"></a>
-            {/* render image programmatically and avoid extension crash */}
+        {listOfVegetables.map((value, index) => {
+          return (
+            <div className="vegetable-box">
+              <a name="vegetables"></a>
+              {/* render image programmatically and avoid extension crash */}
 
-            <div onClick={() => getData(value)}>
-              <a className='clickable' href="#top">
-                {renderImage(images, value)}
+              <div onClick={() => getData(value)}>
+                <a className="clickable" href="#top">
+                  {renderImage(images, value)}
 
-                <span
-                  className="vegetable middle"
-                  key={index}
-                  onClick={() => getData(value)}
-                >
-                  {`${value}`}{" "}
-                </span>
-              </a>
+                  <span
+                    className="vegetable middle"
+                    key={index}
+                    onClick={() => getData(value)}
+                  >
+                    {`${value}`}{" "}
+                  </span>
+                </a>
+              </div>
             </div>
-          </div>
-        );
-      })}
-       </div>
+          );
+        })}
+      </div>
     </div>
   );
 }

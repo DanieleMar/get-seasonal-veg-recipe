@@ -68,7 +68,7 @@ img {
 
 
 
-a .vegetable {
+a.vegetable {
   background-color: green;
   color: white;
   padding: 1em 1.5em;
@@ -103,7 +103,13 @@ a .vegetable {
 
 }
 
-.middle{
-height: 33%;
-margin: 50px;
+
+.recipesList{
+/* display: inline-flex; */
+}
+
+.singleRecipe{
+	width: 33%;
+
+	display: inline-flex;
 }
