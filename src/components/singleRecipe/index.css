@@ -11,5 +11,6 @@ div.singleRecipe{
     vertical-align: top;
     display: inline-block;
     text-align: center;
-    
+    width: max-content;
 }
+

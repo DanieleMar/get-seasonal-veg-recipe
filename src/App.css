@@ -43,7 +43,7 @@
   padding: 50px 0px;
 }
 
-h4 {
+h4, h1 {
   text-align: center;
 }
 
@@ -68,13 +68,13 @@ img {
 
 
 
-a.vegetable {
-  background-color: green;
-  color: white;
-  padding: 1em 1.5em;
-  text-decoration: none;
-  text-transform: uppercase;
-
+.green {
+	background-color: green;
+	color: white;
+	text-decoration: none;
+	padding: 25px;
+	margin: auto;
+	margin-left: 10px;
 }
 
 .all-vegetable{

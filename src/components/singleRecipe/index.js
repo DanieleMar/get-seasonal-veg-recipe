@@ -8,7 +8,7 @@ export default function SingleRecipe(props) {
       
 
       <img src={imgUrl} alt={name} width="200" height="200"></img>
-      <a className='caption' href={url}>{name}</a>
+      <a className='caption green' href={url}>{name}</a>
     </div>
   );
 }

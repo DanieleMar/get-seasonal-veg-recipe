@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getRecipe } from "./utils/fetch/get";
 import SingleRecipe from "./components/singleRecipe";
 import "./App.css";
+// import PopupExample from "./components/popup/index"
 
 export default function App() {
   const [recipes, setRecipes] = useState([]);
@@ -72,6 +73,7 @@ export default function App() {
   let meseCorrente = "Dicembre";
   return (
     <div>
+      {/* <PopupExample /> */}
       <div className="header">
         <a name="top"></a>
         <h1>Ecco le verdure di stagione a {meseCorrente} in Italia </h1>
@@ -81,20 +83,30 @@ export default function App() {
       <br></br>
 
       {recipes.length > 0 && (
-        <a className="middle" href="#vegetables">
-          Torna alla lista delle verdure
-        </a>
+        <>
+          <a className="middle" href="#vegetables">
+            Torna alla lista delle verdure
+          </a>
+          <h1>Lista di Ricette</h1>
+        </>
       )}
       <div className="recipesList">
         {recipes.length > 0 &&
           recipes.map((recipe, index) => {
             const { label, image, url } = recipe;
             return (
-              <SingleRecipe className="singleRecipe" key={index} name={label} url={url} imgUrl={image} />
+              <SingleRecipe
+                className="singleRecipe"
+                key={index}
+                name={label}
+                url={url}
+                imgUrl={image}
+              />
             );
           })}
       </div>
       <br></br>
+      <h1>Lista di Verdure</h1>
       <div className="all-vegetables">
         {listOfVegetables.map((value, index) => {
           return (
@@ -107,7 +119,7 @@ export default function App() {
                   {renderImage(images, value)}
 
                   <span
-                    className="vegetable middle"
+                    className="vegetable middle green"
                     key={index}
                     onClick={() => getData(value)}
                   >
