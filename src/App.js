@@ -73,13 +73,15 @@ export default function App() {
   return (
     <div>
       <div className="header">
-      <a name="top"></a>
+        <a name="top"></a>
         <h1>Ecco le verdure di stagione a {meseCorrente} in Italia </h1>
       </div>
       <br></br>
       <h4>Clicca su una verdura per visualizzare alcune delle ricette</h4>
       <br></br>
-{recipes.length > 0 && <a href="#vegetables">Torna alla lista delle verdure</a>}
+      {recipes.length > 0 && (
+        <a href="#vegetables">Torna alla lista delle verdure</a>
+      )}
       {recipes.length > 0 &&
         recipes.map((recipe, index) => {
           const { label, image, url } = recipe;
@@ -88,28 +90,30 @@ export default function App() {
           );
         })}
       <br></br>
+      <div className="all-vegetables">
       {listOfVegetables.map((value, index) => {
         return (
-          <>
+          <div className='vegetable-box'>
             <a name="vegetables"></a>
             {/* render image programmatically and avoid extension crash */}
-           
-            <span  onClick={() => getData(value)}>
-            <a href="#top">
-              {renderImage(images, value)}
 
-              <span
-                className="vegetable"
-                key={index}
-                onClick={() => getData(value)}
-              >
-                {`${value}, `}{" "}
-              </span>
+            <div onClick={() => getData(value)}>
+              <a className='clickable' href="#top">
+                {renderImage(images, value)}
+
+                <span
+                  className="vegetable middle"
+                  key={index}
+                  onClick={() => getData(value)}
+                >
+                  {`${value}`}{" "}
+                </span>
               </a>
-            </span>
-          </>
+            </div>
+          </div>
         );
       })}
+       </div>
     </div>
   );
 }
