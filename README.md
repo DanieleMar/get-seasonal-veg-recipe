@@ -1,13 +1,11 @@
 # Get Seasonal Vegetarian Recipes
 
-(Work in Progress)
+Cosa fa?  
+Ti fa scoprire ricette con le verdure di stagione di Dicembre.
+E' sufficiente che tu scelga una verdura e ti verranno mostrate le ricette con quella verdura  
 
-Utilizza le seguenti API: 
-* https://developer.edamam.com/edamam-docs-recipe-api
-* https://developer.edamam.com/edamam-docs-nutrition-api
+Guarda il risultato: https://danielemar.github.io/get-seasonal-veg-recipe/
 
+Utilizza le seguente API: https://developer.edamam.com/edamam-docs-recipe-api
+Queste API accettano solo ingredienti in inglese e restituiscono le ricette in inglese
 
-# Funzionalità: (ita) 
-* Prende da API le ricette vegetariane (le ricette sono in inglese)
-* Prende solo le ricette con verdure di stagione in italia
-* Mostra 10 ricette per pagina
