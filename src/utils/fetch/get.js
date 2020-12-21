@@ -21,7 +21,8 @@ export const getRecipe = async (vegetable) => {
 
         return data
       } catch(err) {
-        console.log('error', err); // TypeError: failed to fetch
+        console.log("E' stato riscontrato un errore")
+        // console.log('error', err); // TypeError: failed to fetch
       }
 
 }
