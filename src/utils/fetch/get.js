@@ -9,7 +9,7 @@ export const getRecipe = async (vegetable) => {
           method:'GET',
           headers: {
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": '*'
+            "Access-Control-Allow-Origin": 'http://localhost:3000/',
 
           },
           // mode:'no-cors'
@@ -21,7 +21,7 @@ export const getRecipe = async (vegetable) => {
 
         return data
       } catch(err) {
-        console.log("E' stato riscontrato un errore")
+        console.log(err.message)
         // console.log('error', err); // TypeError: failed to fetch
       }
 
