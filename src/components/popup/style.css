@@ -1,0 +1,15 @@
+
+  .popup_inner {
+    position: fixed;
+    top: 25%;
+    left: 25%;
+    margin: auto;
+    width: 50%;
+    height: 50%;
+    border-radius: 20px;
+    background: rgb(94, 223, 94);
+
+
+  
+  }
+

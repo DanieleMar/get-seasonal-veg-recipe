@@ -3,6 +3,8 @@ import { getRecipe } from "./utils/fetch/get";
 import SingleRecipe from "./components/singleRecipe";
 import "./App.css";
 // import PopupExample from "./components/popup/index"
+import Popup from './components/popup';
+
 
 export default function App() {
   const [recipes, setRecipes] = useState([]);
@@ -32,8 +34,13 @@ export default function App() {
     "Pumpkin",
   ];
 
+
+  const [showPopup, setShowPopup] = useState(false);
+
   //Get recipes
   const getData = async (value) => {
+    setShowPopup(true)
+  
     const data = await getRecipe(value);
     if (data !== undefined) {
       const { hits, count } = data;
@@ -48,6 +55,7 @@ export default function App() {
     });
 
     setRecipes(recipeArray);
+    setShowPopup(false)
   };
   //IMPORT image dinamically
   function importAll(r) {
@@ -71,9 +79,27 @@ export default function App() {
   };
 
   let meseCorrente = "Dicembre";
+
+
+  const closePopup=() =>{
+    setShowPopup(false);}
+
+
   return (
     <div>
       {/* <PopupExample /> */}
+
+
+
+      {showPopup ?
+         <Popup
+          text='Loading...'
+          closePopup={()=> closePopup()}
+         />
+         : null
+       }
+
+      {/* End Popup */}
       <div className="header">
         <a name="top"></a>
         <h1>Ecco le verdure di stagione a {meseCorrente} in Italia </h1>
@@ -81,7 +107,6 @@ export default function App() {
       <br></br>
       <h4>Clicca su una verdura per visualizzare alcune delle ricette</h4>
       <br></br>
-
       {recipes.length > 0 && (
         <>
           <a className="middle" href="#vegetables">
@@ -91,7 +116,7 @@ export default function App() {
         </>
       )}
       <div className="recipesList">
-        {recipes.length > 0 &&
+        {recipes.length > 0 && 
           recipes.map((recipe, index) => {
             const { label, image, url } = recipe;
             return (
