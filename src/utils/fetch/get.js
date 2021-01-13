@@ -10,19 +10,24 @@ export const getRecipe = async (vegetable) => {
           headers: {
             "Content-Type": "application/json",
             "Access-Control-Allow-Origin": 'http://localhost:3000/',
+            'Accept-Encoding': 'gzip'
 
           },
           // mode:'no-cors'
     
           
         })
-        const data = await response.json()
-    
+        const data = await response
 
-        return data
+        if (data.status >= 200 && data.status <= 299) {
+          return data.json();
+        } else {
+         
+          throw 'errore';
+        }
       } catch(err) {
-        console.log(err.message)
-        // console.log('error', err); // TypeError: failed to fetch
+        console.log('Troppe chiamate api')
+        return 429
       }
 
 }
