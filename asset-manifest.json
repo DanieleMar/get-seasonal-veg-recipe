@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/get-seasonal-veg-recipe/static/css/main.4ffb5958.chunk.css",
-    "main.js": "/get-seasonal-veg-recipe/static/js/main.0d9682ac.chunk.js",
-    "main.js.map": "/get-seasonal-veg-recipe/static/js/main.0d9682ac.chunk.js.map",
+    "main.js": "/get-seasonal-veg-recipe/static/js/main.eeeca00f.chunk.js",
+    "main.js.map": "/get-seasonal-veg-recipe/static/js/main.eeeca00f.chunk.js.map",
     "runtime-main.js": "/get-seasonal-veg-recipe/static/js/runtime-main.69349bee.js",
     "runtime-main.js.map": "/get-seasonal-veg-recipe/static/js/runtime-main.69349bee.js.map",
-    "static/js/2.4d574a3b.chunk.js": "/get-seasonal-veg-recipe/static/js/2.4d574a3b.chunk.js",
-    "static/js/2.4d574a3b.chunk.js.map": "/get-seasonal-veg-recipe/static/js/2.4d574a3b.chunk.js.map",
+    "static/js/2.3676e175.chunk.js": "/get-seasonal-veg-recipe/static/js/2.3676e175.chunk.js",
+    "static/js/2.3676e175.chunk.js.map": "/get-seasonal-veg-recipe/static/js/2.3676e175.chunk.js.map",
     "static/js/3.1a688363.chunk.js": "/get-seasonal-veg-recipe/static/js/3.1a688363.chunk.js",
     "static/js/3.1a688363.chunk.js.map": "/get-seasonal-veg-recipe/static/js/3.1a688363.chunk.js.map",
     "index.html": "/get-seasonal-veg-recipe/index.html",
     "static/css/main.4ffb5958.chunk.css.map": "/get-seasonal-veg-recipe/static/css/main.4ffb5958.chunk.css.map",
-    "static/js/2.4d574a3b.chunk.js.LICENSE.txt": "/get-seasonal-veg-recipe/static/js/2.4d574a3b.chunk.js.LICENSE.txt",
+    "static/js/2.3676e175.chunk.js.LICENSE.txt": "/get-seasonal-veg-recipe/static/js/2.3676e175.chunk.js.LICENSE.txt",
     "static/media/artichoke.jpg": "/get-seasonal-veg-recipe/static/media/artichoke.8f4f95b2.jpg",
     "static/media/bean.jpg": "/get-seasonal-veg-recipe/static/media/bean.dce7b1f9.jpg",
     "static/media/cabbage.jpeg": "/get-seasonal-veg-recipe/static/media/cabbage.72524746.jpeg",
@@ -36,8 +36,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.69349bee.js",
-    "static/js/2.4d574a3b.chunk.js",
+    "static/js/2.3676e175.chunk.js",
     "static/css/main.4ffb5958.chunk.css",
-    "static/js/main.0d9682ac.chunk.js"
+    "static/js/main.eeeca00f.chunk.js"
   ]
 }
