@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getRecipe } from "./utils/fetch/get";
 import SingleRecipe from "./components/singleRecipe";
 import "./App.css";
-import Popup from './components/popup';
-
+import Popup from "./components/popup";
 
 export default function App() {
   const [recipes, setRecipes] = useState([]);
@@ -33,14 +32,18 @@ export default function App() {
     "Pumpkin",
   ];
 
-
   const [showPopup, setShowPopup] = useState(false);
-
+  const [textInside, setTextInside] = useState('Loading');
   //Get recipes
   const getData = async (value) => {
-    setShowPopup(true) //open popup while loading
-  
+    setShowPopup(true); //open popup while loading
+
     const data = await getRecipe(value);
+    if (data === 429) { //429 is arbitrary number, but it is the same code for http status code with too many requests
+      setTextInside('Troppe chiamate API, aspetta 1 minuto')
+
+      return 
+    }
     if (data !== undefined) {
       const { hits, count } = data;
       getSetRecipes(hits, count);
@@ -54,7 +57,7 @@ export default function App() {
     });
 
     setRecipes(recipeArray);
-    setShowPopup(false) // close popup when recipes are rendered
+    setShowPopup(false); // close popup when recipes are rendered
   };
   //IMPORT image dinamically
   function importAll(r) {
@@ -79,24 +82,15 @@ export default function App() {
 
   let meseCorrente = "Dicembre";
 
-
-  const closePopup=() =>{
-    setShowPopup(false);}
-
+  const closePopup = () => {
+    setShowPopup(false);
+  };
 
   return (
     <div>
-      {/* <PopupExample /> */}
+      {showPopup ? 
+        <Popup text={textInside} closePopup={() => closePopup()} /> : null}
 
-
-
-      {showPopup ?
-         <Popup
-          text='Loading...'
-          closePopup={()=> closePopup()}
-         />
-         : null
-       }
 
       {/* End Popup */}
       <div className="header">
@@ -115,7 +109,7 @@ export default function App() {
         </>
       )}
       <div className="recipesList">
-        {recipes.length > 0 && 
+        {recipes.length > 0 &&
           recipes.map((recipe, index) => {
             const { label, image, url } = recipe;
             return (
@@ -145,7 +139,7 @@ export default function App() {
                   <span
                     className="vegetable middle green"
                     key={index}
-                    onClick={() => getData(value)}
+                    // onClick={() => getData(value)}
                   >
                     {`${value}`}{" "}
                   </span>
